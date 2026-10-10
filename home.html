@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Harry Potter Reading Companion</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main_style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="all">
+            <div id="menu">
+                <a href="home.html"><div class="menu-item"><p>Home</p></div></a>
+                <a href="books.html"><div class="menu-item"><p>Books</p></div></a>
+                <a href="stats.html"><div class="menu-item"><p>Stats</p></div></a>
+                <a href="achievements.html"><div class="menu-item"><p>Achievements</p></div></a>
+                <a href="settings.html"><div class="menu-item"><p>Settings</p></div></a>
+            </div>
+            <div id="main-app">
+                <h1 id="welcome"></h1>
+                <h3 id="slogan"></h3>
+
+                <div id="hr1">
+                    <hr class="divider">
+                </div>
+
+                <div id="reading-timer"> 
+                    <h2>Reading Timer</h2> 
+
+                    <div id="hr2">
+                        <hr class="divider">
+                    </div>
+                    
+                    <p id="timer-display">00:00:00</p>  
+
+                    <button id="start-timer" onclick="startTimer()">Start Reading</button>
+                    <button id="pause-timer" onclick="pauseTimer()">Pause</button>
+                    <button id="reset-timer" onclick="resetTimer()">Reset</button>
+                </div>            
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

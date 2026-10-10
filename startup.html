@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Harry Potter Reading Companion</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="start_style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main-content">
+            <h1>Welcome to Hogwarts!</h1>
+            <div class="hr1"><hr class="divider"></div>
+            <h2>Choose a house!</h2>
+            <div class="container">
+                <div class="house" id="Gryffindor" onclick="selectHouse('Gryffindor')">
+                    <p class="emoji">🦁</p>
+                    <h3>Gryffindor</h3>
+                    <div class="house_hr"><hr class="divider"></div>
+                    <p class="desc">Courage, bravery, nerve, and chivalry</p>
+                </div>
+
+                <div class="house" id="Slytherin"  onclick="selectHouse('Slytherin')">
+                    <p class="emoji">🐍</p>
+                    <h3>Slytherin</h3>
+                    <div class="house_hr"><hr class="divider"></div>
+                    <p class="desc">Ambition, cunning, leadership, and resourcefulness</p>            
+                </div>
+
+                <div class="house" id="Hufflepuff" onclick="selectHouse('Hufflepuff')">
+                    <p class="emoji">🦡</p>
+                    <h3>Hufflepuff</h3>
+                    <div class="house_hr"><hr class="divider"></div>
+                    <p class="desc">Loyalty, hard work, patience, fairness, and dedication</p>
+                </div>
+
+                <div class="house" id="Ravenclaw" onclick="selectHouse('Ravenclaw')">
+                    <p class="emoji">🦅</p>
+                    <h3>Ravenclaw</h3> 
+                    <div class="house_hr"><hr class="divider"></div>                   
+                    <p class="desc">Wisdom, wit, intelligence, and learning</p>
+                </div>
+            </div>
+            <button id="house-btn" onclick="confirmHouse()">OK</button>
+            <p id="error"></p>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

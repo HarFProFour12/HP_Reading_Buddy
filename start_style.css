@@ -1,0 +1,177 @@
+@font-face {
+    font-family: "HarryPotter";
+    src: url('HARRYP__.TTF') format('truetype');
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+body {
+    background-image: url("images/background1.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overscroll-behavior: none;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+h1 {
+    font-family: 'HarryPotter', serif;
+    font-size: 96px;
+    text-align: center;
+    color: #f0e6d2;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+h2, h3 {
+    text-align: center;
+    font-family: "Cinzel", serif;
+    color: #f0e6d2;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.house {
+    width: 190px;
+    height: 280px;
+    box-sizing: border-box;
+    padding: 24px 14px;
+    margin: 0px;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 20px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), inset 0 0 25px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+#Gryffindor {
+    border-color: #d4a63a;
+    background: linear-gradient(to bottom, #5a0808, #2a0303);
+    color: #f3e8d0;
+}
+
+#Slytherin {
+    border-color: #b4bdb7;
+    background: linear-gradient(to bottom, #0a3320, #04170e);
+    color: #f3e8d0;
+}
+
+#Hufflepuff {
+    border-color: #e8c04f;
+    background: linear-gradient(to bottom, #8a6208, #4a3303);
+    color: #f6ecd2;
+}
+
+#Ravenclaw {
+    border-color: #c29a5f;
+    background: linear-gradient(to bottom, #0e2565, #050c2b);
+    color: #f3e8d0;
+}
+
+#house-btn {
+    display: block;
+    margin: 15px auto;
+    width: 150px;
+    height: 50px;
+    background-color: #D3A625;
+    color: #1A1A1A;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#house-btn:hover {
+    background-color: #B88E1D;
+    transform: scale(1.02);
+}
+
+.hr1 .divider {
+    width: 300px;
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #D3A625, transparent);
+}
+
+.house h3 {
+    color: inherit;
+    margin: 0;
+}
+
+.house .desc {
+    font-family: Georgia;
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.25;
+}
+
+.emoji {
+    font-size: 56px;
+    margin: 14px 0 10px
+}
+
+a {
+    text-decoration: none;
+}
+
+.house_hr {
+    width: 85px;
+    height: 2px;
+    margin: 8px 0;
+    background: linear-gradient(to right, transparent, #D3A625, transparent);
+}
+
+.house_hr .divider {
+    display: none;
+}
+
+#error {
+    color: #ff8a8a;
+    font-family: Georgia;
+    margin: 0;
+    min-height: 1.2em;
+}
+
+.house.selected::after {
+    content: "✓";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #D3A625;
+    color: #1A1A1A;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
