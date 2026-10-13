@@ -63,9 +63,10 @@ if (slogan) {
     welcome.innerText = "Welcome back, " + house + "!"
 }
 
-let totalTime;
-let seconds = 0;
-let timer;
+let seconds = Number(localStorage.getItem("active-session-seconds")) || 0;
+let isRunning = false;
+let sessionStarted = localStorage.getItem("session-started") === "true";
+let timer = null;
 
 function updateTimer() {
     let h = Math.floor(seconds / 3600);
@@ -76,6 +77,8 @@ function updateTimer() {
     String(h).padStart(2, "0") + ":" +
     String(m).padStart(2, "0") + ":" +
     String(s).padStart(2, "0");
+
+    localStorage.setItem("active-session-seconds", seconds)
 }
 
 function startTimer() {
@@ -84,18 +87,115 @@ function startTimer() {
         seconds ++
         updateTimer();
     }, 1000)
+
+    isRunning = true;
 };
 
 function pauseTimer() {
     clearInterval(timer);
     timer = null;
+
+    isRunning = false;
 };
 
+function toggleTimer() {
+    if (isRunning) {
+        pauseTimer();
+    }
+    else {
+        startTimer();
+        sessionStarted = true;
+        localStorage.setItem("session-started", "true")
+    }
+
+    document.getElementById("start-pause").textContent =
+        isRunning ? "Pause" : "Resume";
+    
+    document.getElementById("reset").hidden = false;
+    document.getElementById("finish").hidden = false;
+}
+
 function resetTimer() {
+    if (!confirm("Reset this session? Unsaved time will be lost.")) {
+        return;
+    }
+
     clearInterval(timer);
     timer = null;
     seconds = 0;
+    isRunning = false;
+    sessionStarted = false;
+
+    localStorage.removeItem("active-session-seconds");
+    localStorage.removeItem("session-started");
+
     updateTimer();
+
+    document.getElementById("start-pause").textContent = "Start Reading";
+    document.getElementById("reset").hidden = true;
+    document.getElementById("finish").hidden = true;
 };
 
+function finishAndSave() {
+    if (seconds === 0) {
+        alert("Read for at least a second before saving!");
+        return;
+    }
+
+    pauseTimer();
+
+    let totalTime = Number(localStorage.getItem("total-time")) || 0;
+    localStorage.setItem("total-time", totalTime + seconds);
+
+    seconds = 0;
+    sessionStarted = false;
+
+    localStorage.removeItem("active-session-seconds");
+    localStorage.removeItem("session-started");
+
+    updateTimer();
+
+    document.getElementById("start-pause").textContent = "Start Reading";
+    document.getElementById("reset").hidden = true;
+    document.getElementById("finish").hidden = true;
+
+    alert("Reading session saved!");
+}
+
+document.getElementById("start-pause").addEventListener("click", toggleTimer);
+document.getElementById("reset").addEventListener("click", resetTimer);
+document.getElementById("finish").addEventListener("click", finishAndSave);
+
 updateTimer();
+
+if (sessionStarted) {
+    document.getElementById("start-pause").textContent = "Resume";
+    document.getElementById("reset").hidden = false;
+    document.getElementById("finish").hidden = false;
+}
+
+const books = document.querySelectorAll('#books-read input[type="checkbox"]');
+const savedBooks = JSON.parse(localStorage.getItem('booksRead') || '[]');
+
+books.forEach((book, index) => {
+    book.checked = savedBooks.includes(book.id)
+
+    book.addEventListener('change', () => {
+        const readBooks = Array.from(books)
+            .filter(book => book.checked)
+            .map(book => book.id);
+
+        localStorage.setItem('booksRead', JSON.stringify(readBooks));
+    });
+});
+
+const checkboxes = document.querySelectorAll('#books-read input[type="checkbox"]');
+const count = document.getElementById("books-count");
+
+function updateCount() {
+    const read = [...checkboxes].filter(book => book.checked).length;
+    count.textContent = `${read} out of 7 read`;
+}
+
+checkboxes.forEach(book => book.addEventListener("change", updateCount));
+updateCount();

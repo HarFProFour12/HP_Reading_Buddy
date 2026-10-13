@@ -22,10 +22,6 @@
                 <h1 id="welcome"></h1>
                 <h3 id="slogan"></h3>
 
-                <div id="hr1">
-                    <hr class="divider">
-                </div>
-
                 <div id="reading-timer"> 
                     <h2>Reading Timer</h2> 
 
@@ -35,10 +31,49 @@
                     
                     <p id="timer-display">00:00:00</p>  
 
-                    <button id="start-timer" onclick="startTimer()">Start Reading</button>
-                    <button id="pause-timer" onclick="pauseTimer()">Pause</button>
-                    <button id="reset-timer" onclick="resetTimer()">Reset</button>
-                </div>            
+                    <button id="start-pause">Start Reading</button>
+                    <button id="reset" hidden>Reset</button>
+                    <button id="finish" hidden>Finish &amp; Save</button>
+                </div>          
+
+                <div id="books-read">
+                    <h2>Books I've Read<span id="books-count">0 out of 7 read</span></h2>
+
+                    <label>
+                        <input type="checkbox" id="book1">
+                        Harry Potter and the Philosopher's Stone
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="book2">
+                        Harry Potter and the Chamber of Secrets
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" id="book3">
+                        Harry Potter and the Prisoner of Azkaban
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" id="book4">
+                        Harry Potter and the Goblet of Fire
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" id="book5">
+                        Harry Potter and the Order of the Phoenix
+                    </label>
+                    
+                    <label>
+                        <input type="checkbox" id="book6">
+                        Harry Potter and the Half-Blood Prince
+                    </label>                    
+
+                    <label>
+                        <input type="checkbox" id="book7">
+                        Harry Potter and the Deathly Hallows
+                    </label>                 
+                </div>                
             </div>
         </div>
         <script src="script.js"></script>
