@@ -22,19 +22,43 @@
                 <h1 id="welcome"></h1>
                 <h3 id="slogan"></h3>
 
-                <div id="reading-timer"> 
-                    <h2>Reading Timer</h2> 
+                <div id="timer-music">
+                    <div id="reading-timer"> 
+                        <h2>Reading Timer</h2> 
 
-                    <div id="hr2">
-                        <hr class="divider">
+                        <div id="hr2">
+                            <hr class="divider">
+                        </div>
+                        
+                        <p id="timer-display">00:00:00</p>  
+
+                        <div class="timer-buttons-row">
+                            <button id="start-pause">Start Reading</button>
+                            <button id="reset" hidden>Reset</button>
+                            <button id="finish" hidden>Finish &amp; Save</button>
+                        </div>
                     </div>
                     
-                    <p id="timer-display">00:00:00</p>  
+                    <!-- Direct Music Player Div (Matches Reading Timer size & style) -->
+                    <div id="music-player">
+                        <h2>Magical Ambiance</h2>
 
-                    <button id="start-pause">Start Reading</button>
-                    <button id="reset" hidden>Reset</button>
-                    <button id="finish" hidden>Finish &amp; Save</button>
-                </div>          
+                        <div id="hr2">
+                            <hr class="divider">
+                        </div>
+                            
+                            <select id="track-select">
+                                <option value="https://actions.google.com/sounds/v1/weather/rain_heavy_loud.ogg">Rain on the Quidditch Pitch</option>
+                                <option value="https://actions.google.com/sounds/v1/ambiences/daytime_forrest_bonfire.ogg">Forbidden Forest Campfire</option>
+                                <option value="https://actions.google.com/sounds/v1/ambiences/spring_day_forest.ogg">Hogwarts Grounds (Spring Forest)</option>
+                                <option value="https://actions.google.com/sounds/v1/ambiences/crickets_with_distant_traffic.ogg">Evening by the Lake</option>
+                                <option value="https://actions.google.com/sounds/v1/ambiences/warm_evening_outdoors.ogg">Warm Evening Outdoors</option>
+                            </select>
+
+                            <button id="play-pause-btn">Play Ambience</button>
+                            <audio id="bg-audio" src="https://actions.google.com/sounds/v1/weather/rain_heavy_loud.ogg" loop></audio>
+                    </div>
+                </div>
 
                 <div id="books-read">
                     <h2>Books I've Read<span id="books-count">0 out of 7 read</span></h2>

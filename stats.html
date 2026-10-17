@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Harry Potter Reading Companion</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main_style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="all">
+            <div id="menu">
+                <a href="home.html"><div class="menu-item"><p>Home</p></div></a>
+                <a href="books.html"><div class="menu-item"><p>Books</p></div></a>
+                <a href="stats.html"><div class="menu-item"><p>Stats</p></div></a>
+                <a href="achievements.html"><div class="menu-item"><p>Achievements</p></div></a>
+                <a href="settings.html"><div class="menu-item"><p>Settings</p></div></a>
+            </div>
+            <div id="main-app">
+                <h1 id="welcome"></h1>
+                <h3 id="slogan"></h3>  
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h2>Total Time Read</h2>
+                        <p class="stat" id="total-time">0h 0m</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h2>Books Completed</h2>
+                        <p class="stat" id="books-completed">0 / 7</p>                        
+                    </div>
+                    
+                    <div class="stat-card">
+                        <h2>Reading Streak</h2>
+                        <p class="stat" id="reading-streak">0 days</p>                        
+                    </div>           
+                </div>
+                
+                <div class="stats-banner">
+                    <h2>Series Progress</h2>
+
+                    <div class="divider-left"><hr class="divider"></div>
+
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="stats-progress-bar"></div>
+                    </div>
+
+                    <p id="stats-progress-text" class="progress-text">0% Complete</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const totalSeconds = Number(localStorage.getItem("total-time")) || 0;
+                const minutes = Math.floor((totalSeconds % 3600) / 60);
+                const hours = Math.floor(totalSeconds / 3600);
+                document.getElementById('total-time').textContent = `${hours}h ${minutes}m`;
+
+                const savedBooks = JSON.parse(localStorage.getItem("booksRead") || "[]");
+                const count = savedBooks.length;
+                const precentage = Math.round((count / 7) * 100);
+
+                document.getElementById('books-completed').textContent = `${count} / 7`;
+                document.getElementById('stats-progress-bar').style.width = `${precentage}%`;
+                document.getElementById('stats-progress-text').textContent = `${precentage}% Completed`;
+            });
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>

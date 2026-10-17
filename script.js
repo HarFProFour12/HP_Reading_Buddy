@@ -5,10 +5,10 @@ const welcome = document.getElementById("welcome")
 let account = false
 
 const slogans = {
-    "Gryffindor": "Where courage leads the way.",
-    "Slytherin": "Where ambition finds its path.",
-    "Ravenclaw": "Where curiosity knows no bounds.",
-    "Hufflepuff": "Where loyalty and kindness endure."
+    "Gryffindor": "Where courage leads the way",
+    "Slytherin": "Where ambition finds its path",
+    "Ravenclaw": "Where curiosity knows no bounds",
+    "Hufflepuff": "Where loyalty and kindness endure"
 }
 
 const backgrounds = {
@@ -199,3 +199,52 @@ function updateCount() {
 
 checkboxes.forEach(book => book.addEventListener("change", updateCount));
 updateCount();
+
+const audio = document.getElementById('bg-audio');
+const musicBtn = document.getElementById('play-pause-btn');
+const trackSelect = document.getElementById('track-select');
+
+function upadteVolume() {
+    if (trackSelect.value.includes("rain_heavy_loud.ogg")) {
+        audio.volume = 0.2;
+    }
+    else if (trackSelect.value.includes("daytime_forrest_bonfire.ogg")) {
+        audio.volume = 0.4;
+    }
+    else if (trackSelect.value.includes("spring_day_forest.ogg")) {
+        audio.volume = 1;
+    }
+    else if (trackSelect.value.includes("crickets_with_distant_traffic.ogg")) {
+        audio.volume = 1;
+    }
+    else if (trackSelect.value.includes("warm_evening_outdoors.ogg")) {
+        audio.volume = 0.8;
+    }
+}
+
+musicBtn.addEventListener('click', () => {
+    if (audio.paused) {
+        upadteVolume();
+        audio.play();
+        musicBtn.textContent = 'Pause Ambience';
+    } else {
+        audio.pause();
+        musicBtn.textContent = 'Play Ambience';
+    }
+})
+
+trackSelect.addEventListener('change', () => {
+    audio.src = trackSelect.value;
+    console.log('Current track: ' + trackSelect.value)
+    upadteVolume();
+    audio.load();
+
+    if (!audio.paused) {
+        audio.play();
+        musicBtn.textContent = 'Pause Ambience';
+    } else {
+        musicBtn.textContent = 'Play Ambience';
+    }
+});
+
+upadteVolume();

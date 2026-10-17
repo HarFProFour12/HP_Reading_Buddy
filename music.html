@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hogwarts Ambience</title>
+        <link rel="stylesheet" href="main_style.css">
+        <link rel="stylesheet" href="music.css">
+    </head>
+    <body>
+        <div id="music-player">
+            <h3>Background Music</h3>
+
+            <div id="hr2">
+                <hr class="divider">
+            </div>
+
+            <audio id="bg-audio" loop>
+                <source src="https://assets.mixkit.co/active_storage/sfx/1291/1291-preview.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <button id="play-pause-btn" onclick="togglePlay()">Play Ambience</button>
+        </div>
+
+        <script>
+            const audio = document.getElementById('bg-audio');
+            const btn = document.getElementById('play-pause-btn');
+
+            function togglePlay() {
+                if (audio.paused) {
+                    audio.play();
+                    btn.textContent = 'Pause Ambience';
+                } else {
+                    audio.pause();
+                    btn.textContent = 'Play Ambience';
+                }
+            }
+        </script>
+    </body>
+</html>
