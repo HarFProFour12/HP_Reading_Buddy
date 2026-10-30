@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Books Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main_style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="all">
+            <div id="menu">
+                <a href="home.html"><div class="menu-item"><p>Home</p></div></a>
+                <a href="journal.html"><div class="menu-item"><p>Journal</p></div></a>
+                <a href="stats.html"><div class="menu-item"><p>Stats</p></div></a>
+                <a href="achievements.html"><div class="menu-item"><p>Achievements</p></div></a>
+                <a href="settings.html"><div class="menu-item"><p>Settings</p></div></a>
+            </div>
+            <div id="main-app">
+                <h1>Settings</h1>
+                <h3>Make your reading experience your own.</h3>
+                <div id="settings-grid">
+                    <section class="settings-card">
+                        <h2>Your Hogwarts House</h2>
+                        <p id="current-house">Loading house...</p>
+                        <button id="change-house">Change House</button>
+                    </section>
+
+                    <section class="settings-card">
+                        <h2>Reading Preferences</h2>
+                        <label for="reading-goal">Daily reading goal (minutes)</label>
+                        <input type="number" id="reading-goal" min="1" max="1440" value="20">
+                        <button id="save-settings">Save Settings</button>
+                        <p id="settings-message"></p>
+                    </section>
+
+                    <section class="settings-card">
+                        <h2>Reading Data</h2>
+                        <p>Reset your reading time, streak, and completed books.</p>
+                        <button id="reset-progress">Reset Reading Progress</button>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+        <script>
+            const currentHouse = document.getElementById('current-house');
+            const selectedHouse = localStorage.getItem('house');
+
+            const houseEmojis = {
+                "Gryffindor": "🦁",
+                "Slytherin": "🐍",
+                "Hufflepuff": "🦡",
+                "Ravenclaw": "🦅"
+            };
+
+        currentHouse.textContent = selectedHouse
+            ? `${houseEmojis[selectedHouse]} ${selectedHouse}`
+            : "No House selected";
+
+            document.getElementById('change-house').addEventListener("click", () => {
+                window.location.href = "index.html"
+            });
+
+            const goalInput = document.getElementById("reading-goal");
+            goalInput.value = localStorage.getItem("reading-goal") || 20;
+
+            document.getElementById("save-settings").addEventListener("click", () => {
+                const goal = Number(goalInput.value);
+
+                if (!Number.isInteger(goal) || goal < 1 || goal > 1440) {
+                    document.getElementById("settings-message").textContent =
+                        "Please enter a goal between 1 and 1440 minutes.";
+                    return;
+                }
+
+                localStorage.setItem("reading-goal", goal);
+                document.getElementById("settings-message").textContent =
+                    "Settings saved!";
+            });
+
+            document.getElementById("reset-progress").addEventListener("click", () => {
+                if (!confirm("Are you sure? This will erase your reading progress.")) {
+                    return;
+                }
+
+                [
+                    "total-time",
+                    "completed-sessions",
+                    "reading-streak",
+                    "last-reading-date",
+                    "booksRead",
+                    "active-session-seconds",
+                    "session-started",
+                    "reading-goal"
+                ].forEach(key => localStorage.removeItem(key));
+
+                alert("Reading progress has been reset.");
+                window.location.reload();
+            });
+        </script>
+    </body>
+</html>

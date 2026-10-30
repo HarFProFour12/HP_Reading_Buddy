@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Journal</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="main_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="all">
+
+        <div id="menu">
+            <a href="home.html"><div class="menu-item"><p>Home</p></div></a>
+            <a href="journal.html"><div class="menu-item"><p>Journal</p></div></a>
+            <a href="stats.html"><div class="menu-item"><p>Stats</p></div></a>
+            <a href="achievements.html"><div class="menu-item"><p>Achievements</p></div></a>
+            <a href="settings.html"><div class="menu-item"><p>Settings</p></div></a>
+        </div>
+
+        <div id="main-app">
+
+            <h1>My Reading Journal</h1>
+            <h3>Your own little corner of the wizarding world. Write down anything you want to remember.</h3>
+
+            <!-- Main Journal Screen -->
+            <div id="journal-main-view" class="journal-view">
+
+                <section class="journal-section">
+                    <form id="journal-form">
+
+                        <label for="journal-book">Book</label>
+
+                        <select id="journal-book" required>
+                            <option value="Harry Potter and the Philosopher's Stone">Harry Potter and the Philosopher's Stone</option>
+                            <option value="Harry Potter and the Chamber of Secrets">Harry Potter and the Chamber of Secrets</option>
+                            <option value="Harry Potter and the Prisoner of Azkaban">Harry Potter and the Prisoner of Azkaban</option>
+                            <option value="Harry Potter and the Goblet of Fire">Harry Potter and the Goblet of Fire</option>
+                            <option value="Harry Potter and the Order of the Phoenix">Harry Potter and the Order of the Phoenix</option>
+                            <option value="Harry Potter and the Half-Blood Prince">Harry Potter and the Half-Blood Prince</option>
+                            <option value="Harry Potter and the Deathly Hallows">Harry Potter and the Deathly Hallows</option>
+                        </select>
+
+                        <label for="journal-date">Date</label>
+                        <input type="date" id="journal-date" required>
+
+                        <label for="journal-notes">Your thoughts</label>
+
+                        <textarea
+                            id="journal-notes"
+                            rows="8"
+                            placeholder="What stood out to you? Any theories, favourite moments, quotes, feelings, or completely random thoughts? Write whatever you like..."
+                            required
+                        ></textarea>
+
+                        <div class="journal-buttons">
+                            <button type="submit" id="journal-save">Save Entry</button>
+                            <button type="button" id="journal-cancel" hidden>Cancel Edit</button>
+                        </div>
+
+                        <p id="journal-message"></p>
+
+                    </form>
+
+                    <button type="button" id="show-previous-entries">
+                        Previous Entries
+                    </button>
+
+                </section>
+
+            </div>
+
+
+            <!-- Previous Entries Screen -->
+            <div id="journal-entries-view" class="journal-view" hidden>
+
+                <section class="journal-section">
+
+                    <button type="button" id="back-to-journal">
+                        ← Back
+                    </button>
+
+                    <h3>Previous Entries</h3>
+
+                    <div id="journal-entry-list" class="journal-entries"></div>
+
+                </section>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="journal.js"></script>
+
+</body>
+</html>

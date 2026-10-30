@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Achievements Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main_style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="all">
+            <div id="menu">
+                <a href="home.html"><div class="menu-item"><p>Home</p></div></a>
+                <a href="journal.html"><div class="menu-item"><p>Journal</p></div></a>
+                <a href="stats.html"><div class="menu-item"><p>Stats</p></div></a>
+                <a href="achievements.html"><div class="menu-item"><p>Achievements</p></div></a>
+                <a href="settings.html"><div class="menu-item"><p>Settings</p></div></a>
+            </div>
+            <div id="main-app">
+                <h1>Your Magical Milestones</h1>
+                <h3>Every reading session unlocks even more magic.</h3>
+
+
+                <div id="achievement-summary">
+                    0 of 8 achievements unlocked
+                </div>
+
+                <div id="achievement-grid">
+
+                    <div class="achievement-card locked" id="first-session">
+                        <div class="achievement-icon">📖</div>
+                        <h3>First Steps</h3>
+                        <p>Complete your first reading session.</p>
+                        <div class="achievement-status">Locked</div>
+                    </div>
+
+                    <div class="achievement-card locked" id="time-turner">
+                        <div class="achievement-icon">⌛</div>
+                        <h3>Time Turner</h3>
+                        <p>Read for a total of one hour.</p>
+                        <div class="achievement-status">0 / 60 minutes</div>
+                    </div>
+
+                    <div class="achievement-card locked" id="night-owl">
+                        <div class="achievement-icon">🌙</div>
+                        <h3>Night Owl</h3>
+                        <p>Complete 3 reading sessions.</p>
+                        <div class="achievement-status">0 / 3 sessions</div>
+                    </div>
+
+                    <div class="achievement-card locked" id="bookworm">
+                        <div class="achievement-icon">🐛</div>
+                        <h3>Bookworm</h3>
+                        <p>Read for a total of 5 hours.</p>
+                        <div class="achievement-status">0 / 300 minutes</div>
+                    </div>
+
+                    <div class="achievement-card locked" id="dedicated-reader">
+                        <div class="achievement-icon">✨</div>
+                        <h3>Dedicated Reader</h3>
+                        <p>Complete 7 reading sessions.</p>
+                        <div class="achievement-status">0 / 7 sessions</div>
+                    </div>
+
+                    <div class="achievement-card locked" id="halfway-there">
+                        <div class="achievement-icon">📚</div>
+                        <h3>Halfway There</h3>
+                        <p>Mark 4 books as read.</p>
+                        <div class="achievement-status">0 / 4 books</div>
+                    </div>
+
+                    <div class="achievement-card locked" id="series-complete">
+                        <div class="achievement-icon">🏆</div>
+                        <h3>The Complete Collection</h3>
+                        <p>Mark all 7 main books as read.</p>
+                        <div class="achievement-status">0 / 7 books</div>
+                    </div>
+
+                    <div class="achievement-card locked" id="hogwarts-scholar">
+                        <div class="achievement-icon">🪄</div>
+                        <h3>Hogwarts Scholar</h3>
+                        <p>Read for a total of 10 hours.</p>
+                        <div class="achievement-status">0 / 600 minutes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
