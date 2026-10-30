@@ -123,7 +123,7 @@ I used AI throughout development, mainly for:
 - **Debugging:** Finding and fixing JavaScript and CSS errors.
 - **CSS:** Getting help with layouts, spacing, styling and visual improvements.
 - **JavaScript:** Understanding functions and implementing certain features.
-- **Design:** Exploring ideas for the Hogwarts-inspired visual style.
+- **Design:** Creating background images for the website.
 
 The project idea, feature decisions, overall design direction, testing and development were done by me.
 
