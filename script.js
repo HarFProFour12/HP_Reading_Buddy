@@ -55,6 +55,10 @@ function confirmHouse() {
 
 const house = localStorage.getItem("house");
 
+if (house && document.querySelector(".house")) {
+    window.location.replace("home.html");
+}
+
 if (document.getElementById("main-app") && accents[house]) {
     document.documentElement.style.setProperty("--accent", accents[house]);
     document.documentElement.style.setProperty("--comp", comps[house]);
