@@ -1,5 +1,7 @@
 # Harry Potter Reading Companion
 
+![Houses](images/house.png)
+
 The Harry Potter Reading Companion is a reading tracker inspired by the Wizarding World, designed to make reading the seven Harry Potter books more fun and engaging.
 
 Instead of simply keeping track of which books you've read, the website gives you a place to track your reading sessions, set goals, write down your thoughts, unlock achievements, and follow your progress throughout the series.
@@ -40,11 +42,15 @@ The interface is divided into several pages, each with its own purpose.
 
 ## Home Page
 
+![Houses](images/home.png)
+
 The Home page is the main dashboard of the Reading Companion.
 
 It includes the reading timer, book progress checklist and background music controls, allowing users to start reading and track their progress without navigating through multiple pages.
 
 ## Journal
+
+![Houses](images/journal.png)
 
 The Journal provides a place to write down thoughts, favourite moments, theories and anything else about the books.
 
@@ -53,6 +59,8 @@ Users can create entries by selecting a book, choosing a date and writing their 
 Previous entries can be viewed, edited or deleted at any time.
 
 ## Statistics
+
+![Houses](images/stats.png)
 
 The Statistics page displays information about the user's reading progress.
 
@@ -64,6 +72,8 @@ It includes:
 
 ## Achievements
 
+![Houses](images/achievements.png)
+
 The Achievements page contains different milestones that users can unlock as they read.
 
 Achievements are connected to reading activity, such as total reading time, completed sessions and finished books.
@@ -71,6 +81,8 @@ Achievements are connected to reading activity, such as total reading time, comp
 Locked achievements are displayed differently from unlocked ones.
 
 ## Settings
+
+![Houses](images/settings.png)
 
 The Settings page allows users to manage their reading experience.
 
