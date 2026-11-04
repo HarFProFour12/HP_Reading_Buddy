@@ -12,10 +12,10 @@ const slogans = {
 }
 
 const backgrounds = {
-    "Gryffindor": "images/gryffindor.jpeg",
-    "Slytherin": "images/slytherin.jpeg",
-    "Hufflepuff": "images/hufflepuff.jpeg",
-    "Ravenclaw": "images/ravenclaw.jpeg"
+    "Gryffindor": "images/gryffindor.jpg",
+    "Slytherin": "images/slytherin.jpg",
+    "Hufflepuff": "images/hufflepuff.jpg",
+    "Ravenclaw": "images/ravenclaw.jpg"
 }
 
 const accents = {
