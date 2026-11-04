@@ -794,3 +794,22 @@ label[for="journal-book"] {
 #back-to-journal {
     margin-bottom: 15px;
 }
+
+.photo-credits {
+    margin-top: 32px;
+    font-size: 0.85rem;
+}
+
+.photo-credits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.photo-credits li {
+    margin-bottom: 8px;
+}
+
+.photo-credits a {
+    color: inherit;
+    text-decoration: underline;
+}
