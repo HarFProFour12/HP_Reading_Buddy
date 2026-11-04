@@ -798,6 +798,7 @@ label[for="journal-book"] {
 .photo-credits {
     margin-top: 32px;
     font-size: 0.85rem;
+    color: var(--comp);
 }
 
 .photo-credits ul {
