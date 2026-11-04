@@ -796,18 +796,23 @@ label[for="journal-book"] {
 }
 
 .photo-credits {
-    margin-top: 32px;
-    font-size: 0.85rem;
-    color: var(--comp);
+    font-family: "Georgia", serif;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 .photo-credits ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .photo-credits li {
-    margin-bottom: 8px;
+    margin-bottom: 4px;
+}
+
+.photo-credits li:last-child {
+    margin-bottom: 0;
 }
 
 .photo-credits a {
