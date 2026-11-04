@@ -54,8 +54,10 @@ function confirmHouse() {
 }
 
 const house = localStorage.getItem("house");
+const changingHouse =
+    new URLSearchParams(window.location.search).get("change") === "true";
 
-if (house && document.querySelector(".house")) {
+if (house && document.querySelector(".house") && !changingHouse) {
     window.location.replace("home.html");
 }
 
@@ -432,7 +434,7 @@ function getTodayReadingSeconds() {
     }
 
     return Number(localStorage.getItem("daily-reading-seconds")) || 0;
-}å
+}
 
 function updateDailyGoal() {
     const goalText = document.getElementById("daily-goal-text");

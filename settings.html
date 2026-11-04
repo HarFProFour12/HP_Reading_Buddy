@@ -60,8 +60,8 @@
             ? `${houseEmojis[selectedHouse]} ${selectedHouse}`
             : "No House selected";
 
-            document.getElementById('change-house').addEventListener("click", () => {
-                window.location.href = "index.html"
+            document.getElementById("change-house").addEventListener("click", () => {
+                window.location.href = "index.html?change=true";
             });
 
             const goalInput = document.getElementById("reading-goal");
